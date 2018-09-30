@@ -14,7 +14,7 @@ tasks.withType(JavaCompile) {
 
 buildscript {
     ext {
-        springBootVersion = '2.0.2.RELEASE'
+        springBootVersion = '2.0.5.RELEASE'
     }
     repositories {
         mavenLocal()

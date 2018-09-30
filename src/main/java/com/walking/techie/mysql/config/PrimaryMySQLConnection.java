@@ -47,17 +47,9 @@ public class PrimaryMySQLConnection extends AbstractMySQLConfig {
         .build();
   }
 
-  // @Primary
+  @Primary
   @Bean(name = "primaryTransactionManager")
   public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
     return new JpaTransactionManager(entityManagerFactory);
-  }
-
-  @Bean
-  public JpaVendorAdapter jpaVendorAdapter() {
-    HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
-    adapter.setGenerateDdl(true);
-    adapter.setShowSql(true);
-    return adapter;
   }
 }
